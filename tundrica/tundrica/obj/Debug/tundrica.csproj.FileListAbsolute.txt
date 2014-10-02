@@ -6,3 +6,11 @@ E:\Projects.github\main\tundrica\tundrica\obj\Debug\tundrica.Properties.Resource
 E:\Projects.github\main\tundrica\tundrica\obj\Debug\tundrica.csproj.GenerateResource.Cache
 E:\Projects.github\main\tundrica\tundrica\obj\Debug\tundrica.exe
 E:\Projects.github\main\tundrica\tundrica\obj\Debug\tundrica.pdb
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.exe
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.pdb
+E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\tundrica.exe
+E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\tundrica.pdb
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.csprojResolveAssemblyReference.cache
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.Form1.resources
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.Properties.Resources.resources
+E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.csproj.GenerateResource.Cache
