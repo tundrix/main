@@ -1,0 +1,63 @@
+﻿fundrix = function
+maindrux(...)
+voidrix = procedure - no return value
+clax = class
+
+types:
+boolean:
+bux = 1 byte boolean
+unsigned integer:
+rux=unsigned byte; rox = unsigned octet
+drux=unsigned 2 bytes
+qrux=unsigned 4 bytes
+orux=unsigned 8 bytes
+signed integer:
+srux=signed 1 byte
+sdrux=signed 2 bytes
+sqrux=signed 4 bytes
+sorux=signed 8 bytes
+octets (x86 8-bit bytes):
+rox = unsigned octet
+float:
+fux=float
+dfux=double float
+xfux=extended
+string:
+strinx = ansistring
+sbrinx = stringbuilder
+memory:
+memdrix = memory like string but with type-position access, example: memdrix mx[1024 rux]; mx[drux 9]=1234; print mx[rux 19];//result give "210"
+
+operators:
+math:
+= = = (assignment)
++ = +
+- = -
+* = *
+/ = /
+
+Statements:
+Selection selection:
+if, else //, switch, case
+Jump statements:
+retundrix, returnix = return
+break
+Iteration statements:
+while, for
+
+Sections:
+
+
+Comments:
+#xxx xxx# = may ignore this exxxtra hard constructions for weak languages - leave as comment
+// = line comment
+/* */ = /*+ */ - low level comments (will be translated into your lang)
+/*+ */ = low level comments (will be translated into your lang)
+/*- */ = low level comments (will NOT be translated into your lang)
+9 level comments (will NOT be translated into your lang):
+...
+(*2 2*) = second level comments (will NOT be translated into your lang)
+(*1 1*) = top level comments (will NOT be translated into your lang)
+
+internix:
+tunstruction = tundra construction - system of nested operating objects of your compilinium program

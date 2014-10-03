@@ -14,3 +14,6 @@ E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.csprojResol
 E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.Form1.resources
 E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.Properties.Resources.resources
 E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.csproj.GenerateResource.Cache
+E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\Help_Reference.txt
+E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\tundrica.exe.config
+E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\Help_Reference_Details.txt

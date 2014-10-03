@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>progrix tundra
+version 2014-10-03
+{
+fundrix tux maindrux(strix[] pardux)
+/*maindrux will become to main for c:)*/
+bux:truth;
+rux:year;
+{
+  truth=!true;
+  year=2014;
+  if(truth)
+  {
+    retundrix 0;
+  }
+  else
+  {
+    returnix year;
+  }
+}
+}</value>
+  </data>
 </root>
