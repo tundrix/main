@@ -59,6 +59,10 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,10 +73,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -91,9 +92,9 @@
             this.tabControl3.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,9 +104,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.splitContainer1);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
+            this.panel1.Location = new System.Drawing.Point(12, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 331);
+            this.panel1.Size = new System.Drawing.Size(634, 327);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -122,7 +123,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(632, 329);
+            this.splitContainer1.Size = new System.Drawing.Size(632, 325);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -140,13 +141,13 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("DejaVu Sans Mono", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(3, 16);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(262, 312);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.Size = new System.Drawing.Size(262, 308);
+            this.textBox1.TabIndex = 1;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             this.textBox1.WordWrap = false;
             // 
@@ -164,7 +165,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(356, 323);
+            this.tabControl1.Size = new System.Drawing.Size(356, 319);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -172,7 +173,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(424, 297);
+            this.tabPage1.Size = new System.Drawing.Size(348, 293);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "reserved1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -182,7 +183,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(424, 297);
+            this.tabPage2.Size = new System.Drawing.Size(348, 297);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "reserved2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -192,7 +193,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(424, 297);
+            this.tabPage3.Size = new System.Drawing.Size(348, 297);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "reserved3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -256,7 +257,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(404, 245);
+            this.tabPage6.Size = new System.Drawing.Size(328, 245);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "C++";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -270,7 +271,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(392, 233);
+            this.textBox3.Size = new System.Drawing.Size(316, 233);
             this.textBox3.TabIndex = 0;
             this.textBox3.WordWrap = false;
             // 
@@ -280,7 +281,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(404, 245);
+            this.tabPage7.Size = new System.Drawing.Size(328, 245);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Pascal";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -294,7 +295,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox4.Size = new System.Drawing.Size(392, 233);
+            this.textBox4.Size = new System.Drawing.Size(316, 233);
             this.textBox4.TabIndex = 0;
             this.textBox4.WordWrap = false;
             // 
@@ -328,7 +329,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(404, 245);
+            this.tabPage9.Size = new System.Drawing.Size(328, 245);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Java";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -342,7 +343,7 @@
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox6.Size = new System.Drawing.Size(392, 233);
+            this.textBox6.Size = new System.Drawing.Size(316, 233);
             this.textBox6.TabIndex = 0;
             this.textBox6.WordWrap = false;
             // 
@@ -426,7 +427,7 @@
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(328, 245);
+            this.tabPage13.Size = new System.Drawing.Size(328, 259);
             this.tabPage13.TabIndex = 0;
             this.tabPage13.Text = "BNF notation";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -440,7 +441,7 @@
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox13.Size = new System.Drawing.Size(316, 233);
+            this.textBox13.Size = new System.Drawing.Size(316, 247);
             this.textBox13.TabIndex = 0;
             // 
             // tabPage14
@@ -449,7 +450,7 @@
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(328, 245);
+            this.tabPage14.Size = new System.Drawing.Size(328, 259);
             this.tabPage14.TabIndex = 1;
             this.tabPage14.Text = "Reference";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -464,8 +465,56 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox12.Size = new System.Drawing.Size(316, 233);
+            this.textBox12.Size = new System.Drawing.Size(316, 247);
             this.textBox12.TabIndex = 0;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.textBox14);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(328, 259);
+            this.tabPage16.TabIndex = 2;
+            this.tabPage16.Text = "Dictionary";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox14.Location = new System.Drawing.Point(6, 6);
+            this.textBox14.Multiline = true;
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox14.Size = new System.Drawing.Size(316, 247);
+            this.textBox14.TabIndex = 0;
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.textBox15);
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(328, 259);
+            this.tabPage17.TabIndex = 3;
+            this.tabPage17.Text = "Ref. details";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox15.Location = new System.Drawing.Point(6, 6);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox15.Size = new System.Drawing.Size(316, 247);
+            this.textBox15.TabIndex = 0;
             // 
             // tabPage15
             // 
@@ -557,8 +606,8 @@
             // 
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 23);
-            this.button2.TabIndex = 1;
+            this.button2.Size = new System.Drawing.Size(102, 27);
+            this.button2.TabIndex = 0;
             this.button2.Text = "Open file .t_x";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -567,68 +616,32 @@
             // 
             this.button3.Location = new System.Drawing.Point(120, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 23);
+            this.button3.Size = new System.Drawing.Size(102, 27);
             this.button3.TabIndex = 2;
             this.button3.Text = "Save file .t_x";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // tabPage16
+            // button4
             // 
-            this.tabPage16.Controls.Add(this.textBox14);
-            this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(328, 259);
-            this.tabPage16.TabIndex = 2;
-            this.tabPage16.Text = "Dictionary";
-            this.tabPage16.UseVisualStyleBackColor = true;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox14.Location = new System.Drawing.Point(6, 6);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox14.Size = new System.Drawing.Size(316, 247);
-            this.textBox14.TabIndex = 0;
-            // 
-            // tabPage17
-            // 
-            this.tabPage17.Controls.Add(this.textBox15);
-            this.tabPage17.Location = new System.Drawing.Point(4, 22);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(328, 259);
-            this.tabPage17.TabIndex = 3;
-            this.tabPage17.Text = "Ref. details";
-            this.tabPage17.UseVisualStyleBackColor = true;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Location = new System.Drawing.Point(6, 6);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox15.Size = new System.Drawing.Size(316, 247);
-            this.textBox15.TabIndex = 0;
+            this.button4.Location = new System.Drawing.Point(228, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 21);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Save file .t_n";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 384);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tundrica";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -659,12 +672,12 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            this.tabPage15.ResumeLayout(false);
-            this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -715,6 +728,7 @@
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TabPage tabPage17;
         private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button button4;
 
     }
 }

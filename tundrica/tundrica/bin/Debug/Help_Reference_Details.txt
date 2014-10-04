@@ -1,3 +1,4 @@
 ﻿tunstruction classes:
 { } - blox
 /*+ */ - commix
+fundrix( paramitex ) 

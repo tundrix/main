@@ -17,3 +17,6 @@ E:\Projects.github\tundrix\main\tundrica\tundrica\obj\Debug\tundrica.csproj.Gene
 E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\Help_Reference.txt
 E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\tundrica.exe.config
 E:\Projects.github\tundrix\main\tundrica\tundrica\bin\Debug\Help_Reference_Details.txt
+E:\Projects.github\main\tundrica\tundrica\bin\Debug\tundrica.exe.config
+E:\Projects.github\main\tundrica\tundrica\bin\Debug\Help_Reference.txt
+E:\Projects.github\main\tundrica\tundrica\bin\Debug\Help_Reference_Details.txt
