@@ -183,7 +183,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(348, 297);
+            this.tabPage2.Size = new System.Drawing.Size(348, 293);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "reserved2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(348, 297);
+            this.tabPage3.Size = new System.Drawing.Size(348, 293);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "reserved3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(348, 297);
+            this.tabPage4.Size = new System.Drawing.Size(348, 293);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Languages";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(348, 297);
+            this.tabPage12.Size = new System.Drawing.Size(348, 293);
             this.tabPage12.TabIndex = 4;
             this.tabPage12.Text = "Help";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -528,7 +528,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(348, 297);
+            this.tabPage15.Size = new System.Drawing.Size(348, 293);
             this.tabPage15.TabIndex = 5;
             this.tabPage15.Text = "Tundrux";
             this.tabPage15.UseVisualStyleBackColor = true;

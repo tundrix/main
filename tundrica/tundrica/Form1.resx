@@ -119,7 +119,9 @@
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
     <value>progrix tundra
-version 2014-10-03
+[version:2014-10-03]
+bux:globaltruth;
+rux:globalyear;
 {
 fundrix tux maindrux(strix[] pardux)
 /*maindrux will become to main for c:)*/

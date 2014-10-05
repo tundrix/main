@@ -26,7 +26,7 @@ namespace tundrica
             void to_tundren_sbstr(StringBuilder sb);
             //bool testsyntax();
             bool embody(string text);
-            tundrable[] getnclist();//nc = nested content
+            //tundrable[] getnclist();//nc = nested content
             void addtundrable(tundrable t);
             //string[] getnestedxtypes();
             bool istundrixdatatype();
@@ -45,7 +45,15 @@ namespace tundrica
 
         interface insetting //has nested content
         {
-            string[] getnestedxtypes();         
+            string[] getnestedxtypes();
+            tundrable[] getnclist();//nc = nested content
+        }
+        interface variabledeclaration
+        {
+            string getxtype();
+            void setxtype(string _xtype);
+            string getvarname();
+            void setvarname(string _varname);
         }
 
         #region univesum implementation
@@ -75,6 +83,83 @@ namespace tundrica
                     return true;
             }
             return false;
+        }
+        static string uixlocal_readstringword(string tundrixtext, ref int caretposition, bool readnumberisword)
+        { 
+            int ccpos = caretposition;
+            int len = tundrixtext.Length;
+            bool eos = (ccpos >= len);
+            string res="";
+
+            bool isalreadyinword = false;
+            bool eow = false;
+            bool startedwithnumber=false;
+
+            while (!eos)
+            {
+                char c = tundrixtext[caretposition];
+
+                if (!isalreadyinword)
+                {
+                    if ((('a' <= c) && (c <= 'z')) || (c == '_'))
+                    {
+                        isalreadyinword = true;
+                    }
+                    if (readnumberisword)
+                    {
+                        if (('0' <= c) && (c <= '9'))
+                        {
+                            isalreadyinword = true;
+                            startedwithnumber = true;
+                        }
+                    }
+                }
+                if (isalreadyinword)
+                {
+                    if (!startedwithnumber)
+                    {
+                        if (!((('a' <= c) && (c <= 'z')) ||
+                              (c == '_') ||
+                              (('0' <= c) && (c <= '9'))))
+                        {
+                            eow = true;
+                        }
+                    }
+                    else
+                    {
+                        if (!((('a' <= c) && (c <= 'z')) ||
+                              (c == '_') ||
+                              (('0' <= c) && (c <= '9'))))
+                        {
+                            eow = true;
+                        }
+                    }
+                    if (readnumberisword)
+                    {
+                        if (!((('0' <= c) && (c <= '9'))||
+                            (c=='.')))
+                        {
+                            eow = true;
+                        }
+                    }
+                }
+
+                if (eow)
+                {
+                    return res;
+                }
+                else
+                {
+                    if (isalreadyinword && (eow))
+                    {
+                        res += c;
+                    }
+                }
+
+                ccpos++;
+                eos = (ccpos >= len);
+            }
+            return res;
         }
         static tundrable[] uix_embody(string[] nestedxtypes, string[] advisory, string tundrixtext, ref int caretposition)
         {
@@ -138,7 +223,7 @@ namespace tundrica
             {
                 return true; 
             }
-            tundrable[] tundrable.getnclist()
+            tundrable[] insetting.getnclist()
             {
                 return nclist;
             }
@@ -182,7 +267,7 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
+            tundrable[] insetting.getnclist()
             {
                 return nclist;
             }
@@ -226,7 +311,7 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
+            tundrable[] insetting.getnclist()
             {
                 return nclist;
             }
@@ -270,7 +355,7 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
+            tundrable[] insetting.getnclist()
             {
                 return nclist;
             }
@@ -314,7 +399,7 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
+            tundrable[] insetting.getnclist()
             {
                 return nclist;
             }
@@ -351,10 +436,6 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
-            {
-                return nclist;
-            }
             void tundrable.addtundrable(tundrable t)
             {
                 nclist = uix_addtundrable(nclist, t);
@@ -384,9 +465,36 @@ namespace tundrica
             {
                 return true;
             }
-            tundrable[] tundrable.getnclist()
+            void tundrable.addtundrable(tundrable t)
             {
-                return nclist;
+                nclist = uix_addtundrable(nclist, t);
+            }
+            bool tundrable.istundrixdatatype()
+            {
+                return false;
+            }
+        }
+        class vardeclarix : tundrable, variabledeclaration
+        /*pd byte - platform dependent byte*/
+        {
+            tundrable[] nclist = new tundrable[0];
+
+            string this_xtype = "vardeclarix";
+            string xtype = "";
+            string varname = "";
+            string tundrable.to_tundren_str()
+            {
+                return "";
+            }
+            void tundrable.to_tundren_sbstr(StringBuilder sb)
+            {
+                sb.Append("<" + this_xtype + " xtype='" + xtype + " varname='" + varname + "'>" + rn);
+                uix_nclist_to_tundren_str(sb, nclist);
+                sb.Append("</" + this_xtype + ">" + rn);
+            }
+            bool tundrable.embody(string text)
+            {
+                return true;
             }
             void tundrable.addtundrable(tundrable t)
             {
@@ -395,6 +503,22 @@ namespace tundrica
             bool tundrable.istundrixdatatype()
             {
                 return false;
+            }
+            string variabledeclaration.getxtype()
+            {
+                return xtype;
+            }
+            void variabledeclaration.setxtype(string _xtype )
+            {
+                xtype = _xtype;
+            }
+            string variabledeclaration.getvarname()
+            {
+                return varname;
+            }
+            void variabledeclaration.setvarname(string _varname)
+            {
+                varname = _varname;
             }
         }
     }
