@@ -1,4 +1,8 @@
 ﻿tunstruction classes:
 { } - blox
+[version:2014-10-03] - tuntributix = attributes with [:]
 /*+ */ - commix
-fundrix( paramitex ) 
+/*- */ - disappear commix
+fundrix( parametex ) 
+*- l.a.b.e.l \r\n ... -* - beautix = section with comment
+x=y - assignmentix

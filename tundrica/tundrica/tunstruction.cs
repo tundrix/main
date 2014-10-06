@@ -13,7 +13,13 @@ namespace tundrica
             "fux", "dfux", "xfux", 
             "strinx", "sbrinx",
             "memdrix" };
-        /*struct resultvalue
+        string[] allxtypes = new string[] { "bux",
+            "rux", "drux", "qrux", "orux", 
+            "srux", "sdrux", "sqrux", "sorux", 
+            "rox",
+            "fux", "dfux", "xfux", 
+            "strinx", "sbrinx",
+            "memdrix" };        /*struct resultvalue
         {
             string valuetype;
             byte[] abvalue;
@@ -30,6 +36,9 @@ namespace tundrica
             void addtundrable(tundrable t);
             //string[] getnestedxtypes();
             bool istundrixdatatype();
+            string[] gettunstructioninterfaces();
+            bool hasinterface(string tunstructioninterface);
+            bool isopeningkey(string stringword);
         }
         interface yourlangable
         {
@@ -55,6 +64,9 @@ namespace tundrica
             string getvarname();
             void setvarname(string _varname);
         }
+
+        interface mustliveasstatementline { }
+        interface canliveasstatementline { }
 
         #region univesum implementation
         static string rn = "\r\n";
@@ -85,15 +97,15 @@ namespace tundrica
             return false;
         }
         static string uixlocal_readstringword(string tundrixtext, ref int caretposition, bool readnumberisword)
-        { 
+        {
             int ccpos = caretposition;
             int len = tundrixtext.Length;
             bool eos = (ccpos >= len);
-            string res="";
+            string res = "";
 
             bool isalreadyinword = false;
             bool eow = false;
-            bool startedwithnumber=false;
+            bool startedwithnumber = false;
 
             while (!eos)
             {
@@ -136,8 +148,8 @@ namespace tundrica
                     }
                     if (readnumberisword)
                     {
-                        if (!((('0' <= c) && (c <= '9'))||
-                            (c=='.')))
+                        if (!((('0' <= c) && (c <= '9')) ||
+                            (c == '.')))
                         {
                             eow = true;
                         }
@@ -161,6 +173,30 @@ namespace tundrica
             }
             return res;
         }
+
+        static string uixlocal_readopeningstatement(string tundrixtext, ref int caretposition, bool readnumberisword)
+        {
+            int ccpos = caretposition;
+            int len = tundrixtext.Length;
+            bool eos = (ccpos >= len);
+            string res = "";
+
+            bool isalreadyinword = false;
+            bool eow = false;
+            bool startedwithnumber = false;
+
+            while (!eos)
+            {
+                char c = tundrixtext[caretposition];
+
+
+                ccpos++;
+                eos = (ccpos >= len);
+            }
+            return res;
+        }
+
+
         static tundrable[] uix_embody(string[] nestedxtypes, string[] advisory, string tundrixtext, ref int caretposition)
         {
             tundrable[] nclist = new tundrable[0];
@@ -191,7 +227,7 @@ namespace tundrica
         #endregion
 
 
-        class progrix : tundrable, insetting
+        class progrix : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*program*/
         {
             string[] nestedxtypes = new string[] { "bux",
@@ -201,9 +237,11 @@ namespace tundrica
             "fux", "dfux", "xfux", 
             "strinx", "sbrinx",
             "memdrix" };
+            string this_xtype = "progrix";
+            string[] openingkeys = new string[] { "progrix" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
             tundrable[] nclist = new tundrable[0];
 
-            string this_xtype = "progrix";
             string this_name = "";
             string tundrable.to_tundren_str()
             {
@@ -219,28 +257,17 @@ namespace tundrica
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true; 
-            }
-            tundrable[] insetting.getnclist()
-            {
-                return nclist;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string[] insetting.getnestedxtypes()
-            {
-                return nestedxtypes;
-            }
+            bool tundrable.embody(string text) { return true; }
+            tundrable[] insetting.getnclist() { return nclist; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] insetting.getnestedxtypes() { return nestedxtypes; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+
         }
-        class clax : tundrable, insetting
+        class clax : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*class*/
         {
             string[] nestedxtypes = new string[] { "bux",
@@ -253,38 +280,26 @@ namespace tundrica
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "clax";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "clax" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            tundrable[] insetting.getnclist()
-            {
-                return nclist;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string[] insetting.getnestedxtypes()
-            {
-                return nestedxtypes;
-            }
+            bool tundrable.embody(string text) { return true; }
+            tundrable[] insetting.getnclist() { return nclist; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] insetting.getnestedxtypes() { return nestedxtypes; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class fundrix : tundrable, valuable, insetting
+        class fundrix : tundrable, valuable, insetting, mustliveasstatementline, canliveasstatementline
         /*function*/
         {
             string[] nestedxtypes = new string[] { "bux",
@@ -297,38 +312,26 @@ namespace tundrica
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "fundrix";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "fundrix" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "valuable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            tundrable[] insetting.getnclist()
-            {
-                return nclist;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string[] insetting.getnestedxtypes()
-            {
-                return nestedxtypes;
-            }
+            bool tundrable.embody(string text) { return true; }
+            tundrable[] insetting.getnclist() { return nclist; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] insetting.getnestedxtypes() { return nestedxtypes; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class voidrix : tundrable, insetting
+        class voidrix : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*procedure*/
         {
             string[] nestedxtypes = new string[] { "bux",
@@ -341,38 +344,26 @@ namespace tundrica
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "voidrix";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "voidrix" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            tundrable[] insetting.getnclist()
-            {
-                return nclist;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string[] insetting.getnestedxtypes()
-            {
-                return nestedxtypes;
-            }
+            bool tundrable.embody(string text) { return true; }
+            tundrable[] insetting.getnclist() { return nclist; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] insetting.getnestedxtypes() { return nestedxtypes; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class blox : tundrable, insetting
+        class blox : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*{...}*/
         {
             string[] nestedxtypes = new string[] { "bux",
@@ -385,141 +376,121 @@ namespace tundrica
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "blox";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "{" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            tundrable[] insetting.getnclist()
-            {
-                return nclist;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string[] insetting.getnestedxtypes()
-            {
-                return nestedxtypes;
-            }
+            bool tundrable.embody(string text) { return true; }
+            tundrable[] insetting.getnclist() { return nclist; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] insetting.getnestedxtypes() { return nestedxtypes; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class commix : tundrable
+        class commix : tundrable, canliveasstatementline
         // /*+ */
         {
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "commix";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
+            bool tundrable.embody(string text) { return true; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class rux : tundrable, valuable
+        class tuntributix : tundrable, mustliveasstatementline, canliveasstatementline
+        // /*+ */
+        {
+            tundrable[] nclist = new tundrable[0];
+
+            string this_xtype = "tuntributix";
+            string[] openingkeys = new string[] { "" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "mustliveasstatementline", "canliveasstatementline" };
+
+            string tundrable.to_tundren_str() { return ""; }
+            void tundrable.to_tundren_sbstr(StringBuilder sb)
+            {
+                sb.Append("<" + this_xtype + "'>" + rn);
+                uix_nclist_to_tundren_str(sb, nclist);
+                sb.Append("</" + this_xtype + ">" + rn);
+            }
+            bool tundrable.embody(string text) { return true; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+        }        class rux : tundrable, valuable
         /*pd byte - platform dependent byte*/
         {
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "rux";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string[] openingkeys = new string[] { "" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "valuable" };
+
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
+            bool tundrable.embody(string text) { return true; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
         }
-        class vardeclarix : tundrable, variabledeclaration
+        class vardeclarix : tundrable, variabledeclaration, mustliveasstatementline, canliveasstatementline
         /*pd byte - platform dependent byte*/
         {
             tundrable[] nclist = new tundrable[0];
 
             string this_xtype = "vardeclarix";
+            string[] openingkeys = new string[] { "" };
+            string[] tunstructioninterfaces = new string[] { "tundrable", "variabledeclaration", "mustliveasstatementline", "canliveasstatementline" };
+
             string xtype = "";
             string varname = "";
-            string tundrable.to_tundren_str()
-            {
-                return "";
-            }
+            string tundrable.to_tundren_str() { return ""; }
             void tundrable.to_tundren_sbstr(StringBuilder sb)
             {
                 sb.Append("<" + this_xtype + " xtype='" + xtype + " varname='" + varname + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
                 sb.Append("</" + this_xtype + ">" + rn);
             }
-            bool tundrable.embody(string text)
-            {
-                return true;
-            }
-            void tundrable.addtundrable(tundrable t)
-            {
-                nclist = uix_addtundrable(nclist, t);
-            }
-            bool tundrable.istundrixdatatype()
-            {
-                return false;
-            }
-            string variabledeclaration.getxtype()
-            {
-                return xtype;
-            }
-            void variabledeclaration.setxtype(string _xtype )
-            {
-                xtype = _xtype;
-            }
-            string variabledeclaration.getvarname()
-            {
-                return varname;
-            }
-            void variabledeclaration.setvarname(string _varname)
-            {
-                varname = _varname;
-            }
-        }
+            bool tundrable.embody(string text) { return true; }
+            void tundrable.addtundrable(tundrable t) { nclist = uix_addtundrable(nclist, t); }
+            bool tundrable.istundrixdatatype() { return false; }
+            string variabledeclaration.getxtype() { return xtype; }
+            void variabledeclaration.setxtype(string _xtype) { xtype = _xtype; }
+            string variabledeclaration.getvarname() { return varname; }
+            void variabledeclaration.setvarname(string _varname) { varname = _varname; }
+            string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
+            bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
+            bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+        }        
     }
 }

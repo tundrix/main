@@ -46,7 +46,7 @@ Iteration statements:
 while, for
 
 Sections:
-
+tuntributix = attributes with [:], example: [version:2014-10-03]
 
 Comments:
 #xxx xxx# = may ignore this exxxtra hard constructions for weak languages - leave as comment
