@@ -13,7 +13,7 @@ namespace tundrica
             "fux", "dfux", "xfux", 
             "strinx", "sbrinx",
             "memdrix" };
-        string[] allxtypes = new string[] { "bux",
+        string[] allxty1pes = new string[] { "bux",
             "rux", "drux", "qrux", "orux", 
             "srux", "sdrux", "sqrux", "sorux", 
             "rox",
@@ -68,7 +68,7 @@ namespace tundrica
         interface mustliveasstatementline { }
         interface canliveasstatementline { }
 
-        #region univesum implementation
+        #region universum implementation
         static string rn = "\r\n";
         static tundrable[] uix_addtundrable(tundrable[] at, tundrable t)
         {
@@ -440,7 +440,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
-        }        class rux : tundrable, valuable
+        }   
+        class rux : tundrable, valuable
         /*pd byte - platform dependent byte*/
         {
             tundrable[] nclist = new tundrable[0];

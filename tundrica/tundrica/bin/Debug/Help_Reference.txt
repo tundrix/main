@@ -25,8 +25,12 @@ xfux=extended
 string:
 strinx = ansistring
 sbrinx = stringbuilder
+array:
+arrix = line array (1-axis)
+tablerrix = M-axis array (maybe has problems with compatibility)
+multarrix = abbreviated notation for series of line arrays; multarrix ma[strinx:name, drux:width, drux:height][100];//creates arrix(strinx[100]) name; arrix(drux[100]) width; arrix(drux[100]) height;
 memory:
-memdrix = memory like string but with type-position access, example: memdrix mx[1024 rux]; mx[drux 9]=1234; print mx[rux 19];//result give "210"
+memdrix = memory like string but with type-position access, example: memdrix:mx[1024 rux]; mx[drux:9]=1234; print mx[rux:19];//result give "210"
 
 operators:
 math:
