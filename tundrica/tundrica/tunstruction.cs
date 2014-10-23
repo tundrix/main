@@ -13,7 +13,7 @@ namespace tundrica
             "fux", "dfux", "xfux", 
             "strinx", "sbrinx",
             "memdrix" };
-        string[] allxty1pes = new string[] { "bux",
+        string[] openingwords = new string[] { "bux",
             "rux", "drux", "qrux", "orux", 
             "srux", "sdrux", "sqrux", "sorux", 
             "rox",
@@ -28,6 +28,7 @@ namespace tundrica
 
         interface tundrable
         {
+            //void tundrableconstructor();
             string to_tundren_str();
             void to_tundren_sbstr(StringBuilder sb);
             //bool testsyntax();
@@ -39,6 +40,8 @@ namespace tundrica
             string[] gettunstructioninterfaces();
             bool hasinterface(string tunstructioninterface);
             bool isopeningkey(string stringword);
+            tundrable getmasterobject();
+            void setmasterobject(tundrable masterobject);
         }
         interface yourlangable
         {
@@ -241,6 +244,7 @@ namespace tundrica
             string[] openingkeys = new string[] { "progrix" };
             string[] tunstructioninterfaces = new string[] { "tundrable", "insetting", "mustliveasstatementline", "canliveasstatementline" };
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_name = "";
             string tundrable.to_tundren_str()
@@ -255,7 +259,7 @@ namespace tundrica
             {
                 sb.Append("<" + this_xtype + " name='" + this_name + "'>" + rn);
                 uix_nclist_to_tundren_str(sb, nclist);
-                sb.Append("</" + this_xtype + ">" + rn);
+                sb.Append("</" + this_xtype + ">" + rn);                
             }
             bool tundrable.embody(string text) { return true; }
             tundrable[] insetting.getnclist() { return nclist; }
@@ -265,7 +269,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
-
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class clax : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*class*/
@@ -278,6 +283,7 @@ namespace tundrica
             "strinx", "sbrinx",
             "memdrix" };
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "clax";
             string[] openingkeys = new string[] { "clax" };
@@ -298,6 +304,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class fundrix : tundrable, valuable, insetting, mustliveasstatementline, canliveasstatementline
         /*function*/
@@ -310,6 +318,7 @@ namespace tundrica
             "strinx", "sbrinx",
             "memdrix" };
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "fundrix";
             string[] openingkeys = new string[] { "fundrix" };
@@ -330,6 +339,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class voidrix : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*procedure*/
@@ -342,6 +353,7 @@ namespace tundrica
             "strinx", "sbrinx",
             "memdrix" };
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "voidrix";
             string[] openingkeys = new string[] { "voidrix" };
@@ -362,6 +374,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class blox : tundrable, insetting, mustliveasstatementline, canliveasstatementline
         /*{...}*/
@@ -374,6 +388,7 @@ namespace tundrica
             "strinx", "sbrinx",
             "memdrix" };
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "blox";
             string[] openingkeys = new string[] { "{" };
@@ -394,11 +409,14 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class commix : tundrable, canliveasstatementline
         // /*+ */
         {
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "commix";
             string[] openingkeys = new string[] { "" };
@@ -417,11 +435,14 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class tuntributix : tundrable, mustliveasstatementline, canliveasstatementline
         // /*+ */
         {
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "tuntributix";
             string[] openingkeys = new string[] { "" };
@@ -440,11 +461,14 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }   
         class rux : tundrable, valuable
         /*pd byte - platform dependent byte*/
         {
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "rux";
             string[] openingkeys = new string[] { "" };
@@ -463,11 +487,14 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }
         class vardeclarix : tundrable, variabledeclaration, mustliveasstatementline, canliveasstatementline
         /*pd byte - platform dependent byte*/
         {
             tundrable[] nclist = new tundrable[0];
+            tundrable master = null;
 
             string this_xtype = "vardeclarix";
             string[] openingkeys = new string[] { "" };
@@ -492,6 +519,8 @@ namespace tundrica
             string[] tundrable.gettunstructioninterfaces() { return tunstructioninterfaces; }
             bool tundrable.hasinterface(string tunstructioninterface) { return uixlocal_inastring(tunstructioninterface, tunstructioninterfaces); }
             bool tundrable.isopeningkey(string stringword) { return uixlocal_inastring(stringword, openingkeys); }
+            tundrable tundrable.getmasterobject() { return master; }
+            void tundrable.setmasterobject(tundrable masterobject) { master = masterobject; }
         }        
     }
 }

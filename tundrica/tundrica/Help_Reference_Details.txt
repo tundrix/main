@@ -1,6 +1,7 @@
 ﻿tunstruction classes:
 { } - blox
 [version:2014-10-03] - tuntributix = attributes with [:]
+var declarations - vardeclarix
 /*+ */ - commix
 /*- */ - disappear commix
 fundrix( parametex ) 
