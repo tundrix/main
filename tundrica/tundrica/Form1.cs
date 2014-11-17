@@ -74,5 +74,11 @@ namespace tundrica
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tunstruction tuns = new tunstruction();
+            tuns.uixpublic_mainreader(textBox1.Text, textBox17);
+        }
     }
 }
